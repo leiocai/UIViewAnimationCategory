@@ -26,4 +26,12 @@ UIView的分类动画
   ```
 * 具体实际用法,请参考Demo.
     
+* 为UIView 添加了获取和设置x,y,width,height的方法,使代码更短.
+> 代码示例
 
+   ```objc
+      self.firstLabel.x = 100;
+      self.firstLabel.y = 90;
+      self.firstLabel.width = 70;
+      self.firstLabel.height = 40;
+   ```

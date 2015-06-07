@@ -37,14 +37,20 @@
 }
 
 - (void)setHeight:(CGFloat)height{
-    self.frame = CGRectMake(self.x, self.y, self.width, height);
+    CGRect temp = self.frame;
+    temp.size.height = height;
+    self.frame = temp;
+
 }
 - (CGFloat)height{
     return self.frame.size.height;
 }
 
 - (void)setWidth:(CGFloat)width{
-    self.frame = CGRectMake(self.x, self.y, width, self.height);
+    CGRect temp = self.frame;
+    temp.size.width = width;
+    self.frame = temp;
+
 }
 - (CGFloat)width{
     return self.frame.size.width;
