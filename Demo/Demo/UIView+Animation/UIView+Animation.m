@@ -7,6 +7,7 @@
 //
 
 #import "UIView+Animation.h"
+#import <objc/runtime.h>
 
 #define kScreenWidth CGRectGetWidth([UIScreen mainScreen].bounds)
 #define kScreenHeight CGRectGetHeight([UIScreen mainScreen].bounds)
@@ -14,6 +15,40 @@
 
 @implementation UIView (Animation)
 
+#pragma mark - 💡base Set and Get Method
+
+- (void)setX:(CGFloat)x{
+    CGRect temp = self.frame;
+    temp.origin.x = x;
+    self.frame = temp;
+}
+- (CGFloat)x{
+    return self.frame.origin.x;
+}
+
+- (void)setY:(CGFloat)y{
+    CGRect temp = self.frame;
+    temp.origin.y = y;
+    self.frame = temp;
+}
+
+- (CGFloat)y{
+    return self.frame.origin.y;
+}
+
+- (void)setHeight:(CGFloat)height{
+    self.frame = CGRectMake(self.x, self.y, self.width, height);
+}
+- (CGFloat)height{
+    return self.frame.size.height;
+}
+
+- (void)setWidth:(CGFloat)width{
+    self.frame = CGRectMake(self.x, self.y, width, self.height);
+}
+- (CGFloat)width{
+    return self.frame.size.width;
+}
 
 #pragma mark - 💡bounce up
 - (void)bounceUpWithDuration:(NSTimeInterval)duration{

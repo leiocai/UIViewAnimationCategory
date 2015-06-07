@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "UIView+Animation.h"
+#import "DemoButton.h"
 
 
 #define  kDuration 0.7
@@ -15,7 +16,8 @@
 
 
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet DemoButton *upBtn;
+@property (nonatomic ,weak) UIButton *codeB;
 @end
 
 @implementation ViewController
@@ -30,7 +32,8 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)bounce_up:(UIButton *)sender {
-    [sender bounceUpWithDuration:kDuration];
+    
+  [sender bounceUpWithDuration:kDuration];
 }
 - (IBAction)bounce_down:(UIButton *)sender {
     [sender bounceDownWithDuration:kDuration];
